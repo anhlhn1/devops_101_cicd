@@ -48,10 +48,10 @@ pipeline {
 
         stage('SonarQube Code Analysis') {
             environment{
-                scannerHome = tool 'sonarscanner4'
+                scannerHome = tool 'sonarqube_scanner_8.0'
             }
             steps{
-                withSonarQubeEnv('sonar-pro'){
+                withSonarQubeEnv('SonarQube Analysis'){
                     sh '''
                         ${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=vprofile \
                         -Dsonar.projectName=vprofile-repo \
