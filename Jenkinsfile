@@ -51,7 +51,8 @@ pipeline {
                 scannerHome = tool 'sonarqube_scanner_8.0'
             }
             steps{
-                withSonarQubeEnv('SonarQube Analysis'){
+                // expect to have Jenkins/system - SonarQube server name inside withSonarQubeEnv(...)
+                withSonarQubeEnv('sonarserver'){
                     sh '''
                         ${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=vprofile \
                         -Dsonar.projectName=vprofile-repo \
