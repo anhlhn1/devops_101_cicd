@@ -5,7 +5,7 @@ pipeline {
         maven 'maven-3.9.9' // Ensure Maven is configured in Jenkins global tools
     }
 
-    environment {}
+    // environment {}
     stages {
         stage('Fetch Code') {
             steps {
